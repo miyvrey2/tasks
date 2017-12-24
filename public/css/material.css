@@ -1,0 +1,282 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+/**
+* 	Status bar
+*/
+.status-bar {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: auto;
+    height: 8.75vh;
+    line-height: 8.75vh;
+    color: white;
+    z-index: 3;
+    background-color: #D32F2F;
+    padding-left: 4.72vw;
+    vertical-align: middle;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06), 0 2px 5px 0 rgba(0,0,0,0.2);
+}
+
+.nav-hamburger-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 16px;
+    margin-right: 28.5px;
+}
+
+.nav-hamburger-icon-bar {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 3.4px 0;
+
+}
+
+.status-bar h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.nav-settings-icon {
+    position: relative;
+    height: 8.75vh;
+    line-height: 8.75vh;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.nav-settings-icon span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5vh;
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-top: calc(calc(8.75vh - 5vh) / 2);
+    margin-right: 7px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+.nav-settings-icon span:active {
+    background-color: rgba(255,255,255,0.2);
+
+}
+
+.nav-settings-icon span:after {
+    content: '•••';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    transform: translate(-50%, -50%) rotate(90deg);
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+/**
+ * 	Main content
+ */
+
+main {
+    position: relative;
+    font-size: 13px;
+}
+
+
+.no_date_specified{
+    display: none;
+}
+
+.item {
+    position: relative;
+    height: calc(13.593749999999998vh - 8.88vw);
+    border-bottom: 2px solid #ececec;
+    display: none;
+    overflow: hidden;
+    padding: 4.44vw 4.44vw;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #666666;
+}
+
+.item b {
+    width: 82vw;
+    display: block;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+}
+
+.item i {
+    position: absolute;
+    top: 4.44vw;
+    right: 4.44vw;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.item div {
+    width: 100%;
+    height: 7vh;
+    display: inline;
+    overflow: hidden;
+    float: left;
+}
+
+button {
+    position: relative;
+    padding: 10px 15px;
+    border: 0;
+    outline: 0;
+    color: white;
+    background-color: #D32F2F;
+}
+
+button:active {
+    background-color: #F44336;
+}
+
+.item-show {
+    display: block;
+}
+
+.released_for {
+    padding-top: 10px;
+}
+
+button.filterbutton {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.filterbox {
+    display: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D32F2F;
+}
+
+/**
+ * Start by hiding the checkboxes
+ */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/**
+ * Create the slider bar
+ */
+.input-group-checkbox {
+    position: relative;
+    width: 40px;
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background: #555;
+}
+
+.input-group-checkbox label.radio_label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    background: #ccc;
+}
+
+.input-group-checkbox label.label {
+    position: absolute;
+    top: -5px;
+    margin-left: 40px;
+    width: 230px;
+}
+
+/**
+ * Move the slider in the correct position if the checkbox is clicked
+ */
+.input-group-checkbox input[type=checkbox]:checked + label.radio_label {
+    left: 27px;
+    background-color: #D32F2F;
+}
+
+@media screen and (min-width: 600px) {
+    .column_left,
+    .column_right {
+        width: 50%;
+        display: inline-block;
+    }
+
+    button.filterbutton {
+        display: none;
+    }
+
+    .filterbox {
+        padding-top: 0;
+        display: block !important;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+
+    .item div {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 720px) {
+
+    .status-bar {
+        padding-right: 4.72vw;
+    }
+
+    .status-bar,
+    .nav-settings-icon {
+        height: 48px;
+        line-height: 48px;
+    }
+
+    .nav-hamburger-icon {
+        margin-top: 14px;
+    }
+
+    .nav-settings-icon span {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        margin-top: 6px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+
+    main {
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+    }
+}
