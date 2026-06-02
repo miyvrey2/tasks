@@ -22,7 +22,9 @@
     <link href="{{url('/css/material.css')}}" rel="stylesheet" type="text/css">
     <link href="https://games.enzow.org/lib/css/menu.css" rel="stylesheet" type="text/css">
     <link href="{{url('/css/app.css')}}" rel="stylesheet" type="text/css">
-
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @endif
 
 </head>
 <body>

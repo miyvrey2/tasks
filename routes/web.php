@@ -11,9 +11,11 @@
 |
 */
 
+use App\Http\Controllers\TasksController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/tasks', [TasksController::class, 'index']);
+Route::get('/tasks/{task}', [TasksController::class, 'show']);
